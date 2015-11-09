@@ -22,6 +22,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass'
+  gem 'font-awesome-rails', '4.4.0.0'
+  gem 'breadcrumbs_on_rails', '2.3.1'
   gem 'compass-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
