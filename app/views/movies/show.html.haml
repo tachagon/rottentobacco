@@ -1,30 +1,30 @@
 
-%div.container
-  %div.row
-    %div.col-md-3
-      %a.btn.btn-default.btn-block{:href => movies_path}
-        %span.glyphicon.glyphicon-arrow-left
-        Back to movie list
 
-      %br
+%div.row
+  %div.col-md-3
+    %a.btn.btn-default.btn-block{:href => movies_path}
+      %span.glyphicon.glyphicon-arrow-left
+      Back to movie list
 
-    %div.col-md-9
-      %div.panel.panel-info
-        %div.panel-heading
-          %h2 Details about #{@movie.title} 
-        %div.panel-body
-          %h1= @movie.title
-          %ul#details
-            %li
-              Rating:
-              = @movie.rating
-            %li
-              Released on:
-              = @movie.release_date.strftime("%B %d, %Y")      
-      %div.panel.panel-info
-        %div.panel-heading
-          %h3 Description:
-        %div.panel-body
-          %p#description= @movie.description    
+    %br
+
+  %div.col-md-9
+    %div.panel.panel-info
+      %div.panel-heading
+        %h2 Details about #{@movie.title} 
+      %div.panel-body
+        %h1= @movie.title
+        %ul#details
+          %li
+            Rating:
+            = @movie.rating
+          %li
+            Released on:
+            = @movie.release_date.strftime("%B %d, %Y")      
+    %div.panel.panel-info
+      %div.panel-heading
+        %h3 Description:
+      %div.panel-body
+        %p#description= @movie.description    
 
     

@@ -7,4 +7,17 @@
     = csrf_meta_tags
 
   %body
-    = yield
+    %div.container-fluid
+      %div.row
+        %div.col-md-2
+
+          %div.panel.panel-default
+            %div.panel-body
+              Left - side
+
+        %div.col-md-7
+          = yield
+        %div.col-md-3
+          %div.panel.panel-default
+            %div.panel-body
+              Right - side
