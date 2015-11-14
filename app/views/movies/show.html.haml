@@ -2,7 +2,13 @@
 
 %div.row
   %div.col-md-3
-    %a.btn.btn-default.btn-block{:href => movies_path}
+    %a.btn.btn-primary.btn-block{href: edit_movie_path(@movie)}
+      %i.fa.fa-pencil
+      Edit info
+    %a.btn.btn-danger.btn-block{href: movie_path(@movie), "data-method" => :delete, "rel" => "nofollow"}
+      %i.fa.fa-trash-o
+      Delete
+    %a.btn.btn-default.btn-block{href: movies_path}
       %span.glyphicon.glyphicon-arrow-left
       Back to movie list
 
