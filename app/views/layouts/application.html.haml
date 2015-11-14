@@ -17,6 +17,19 @@
               Left - side
 
         %div.col-md-7
+          - if flash[:notice]
+            %div.alert.alert-success{"role" => "alert"}
+              %button.close{"type" => "button", "data-dismiss" => "alert", "aria-label" => "Close"}
+                %span{"aria-hidden" => "true"}
+                  &times;
+              #notice.message= flash[:notice]
+          - elsif flash[:warning]
+            %div.alert.alert-danger{"role" => "alert"}
+              %div.alert.alert-success{"role" => "alert"}
+              %button.close{"type" => "button", "data-dismiss" => "alert", "aria-label" => "Close"}
+                %span{"aria-hidden" => "true"}
+                  &times;
+              #warning.message= flash[:warning]
           = yield
         %div.col-md-3
           %div.panel.panel-default
