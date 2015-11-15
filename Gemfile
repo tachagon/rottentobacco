@@ -10,6 +10,9 @@ gem 'sqlite3'
 # use Haml for templates
 gem 'haml'
 
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
 # use Ruby debugger
 group :development, :test do
 	gem 'debugger'
