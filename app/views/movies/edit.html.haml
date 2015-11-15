@@ -1,26 +1,13 @@
 = render_breadcrumbs :separator => ' / '
 
-%h2 Create New Movie
+%h2 Edit Existing Movie
 %hr
 
 = form_tag movie_path(@movie), :method => :put, class: 'form-horizontal' do
   
-  %div.form-group
-    = label :movie, :title, 'Title', class: 'col-sm-3 control-label'
-    %div.col-sm-9
-      = text_field :movie, :title, class: 'form-control'
-
-  %div.form-group
-    = label :movie, :rating, 'Rating', class: 'col-sm-3 control-label'
-    %div.col-sm-9
-      = select :movie, :rating, ['G', 'PG', 'PG-13', 'R', 'NC-17'], :class => 'form-control'
-
-  %div.form-group
-    = label :movie, :release_date, 'Release On', class: 'col-sm-3 control-label'
-    %div.col-sm-9
-      = date_select :movie, :release_date, class: 'form-control'
+  = render :partial => 'movie_form'
 
   %div.form-group
     %div.col-sm-3
     %div.col-sm-9
-      = submit_tag 'Save Changes', class: 'btn btn-success btn-sm'
+      = submit_tag 'Update Movie Info', class: 'btn btn-success btn-sm'
