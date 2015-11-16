@@ -2,11 +2,11 @@ Rottentobacco::Application.routes.draw do
   resources :movies
   root :to => redirect('/movies')
 
-  get 'auth/twitter', :as => 'login_twitter'
-  get 'auth/facebook', :as => 'login_facebook'
+  get 'auth/twitter', :as         => 'login_twitter'
+  get 'auth/facebook', :as        => 'login_facebook'
   match 'auth/:provider/callback' => 'sessions#create'
   match 'logout'                  => 'sessions#destroy'
-  match 'auth/failure'             => 'sessions#failure'
+  match 'auth/failure'            => 'sessions#failure'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

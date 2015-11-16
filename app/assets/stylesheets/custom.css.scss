@@ -5,8 +5,9 @@
 @import "compass";
 @import "mixins";
 
-body{
+.main{
 	padding-top: 50px;
+	background-color: white;
 }
 
 .box{
@@ -36,3 +37,7 @@ body{
 // .custom-btn {
 //   @include button-variant(#cece19, #000000, #2dbe27);
 // }
+
+.img-src {
+	background-image: url(image_path('bg.jpg'));
+}

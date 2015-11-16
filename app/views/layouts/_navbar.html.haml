@@ -1,0 +1,51 @@
+%div#navbar-full
+  %div#navbar
+    %nav.navbar.navbar-ct-orange.navbar-fixed-top.navbar-transparent{"role" => "navigation"}
+      %div.container
+        %div.navbar-header
+          %button.navbar-toggle{"type" => "button", "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1"}
+            %span.sr-only
+              Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand.navbar-brand-logo{href: root_path}
+            %div.logo
+              = image_tag "https://s3.amazonaws.com/creativetim_bucket/new_logo.png"
+            %div.brand
+              RottenTobacco
+        %div.collapse.navbar-collapse#bs-example-navbar-collapse-1
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{href: "javascript:void(0)", "data-toggle" => "search"}
+                %i.pe-7s-search
+                %p= "Search"
+            %li
+              %a{href: "#"}
+                %i.pe-7s-mail
+                  %span.label= 23
+                %p= "Message"
+            %li.dropdown
+              %a.dropdown-toggle{href: "#", "data-toggle" => "dropdown"}
+                %i.pe-7s-user
+                %p= "Account"
+              %ul.dropdown-menu
+                %li
+                  %a{href: "#"}
+                    Action
+                %li
+                  %a{href:"#"}
+                    Another action
+                %li
+                  %a{href:"#"}
+                    Someting else here
+                %li.divider
+                %li
+                  %a{href:"#"}
+                    Seperated link
+          %form.navbar-form.navbar-right.navbar-search-form{"role" => "search"}
+            %div.form-group
+              %input.form-control{"type" => "text", "placeholder" => "Search..."}    
+
+    %div.blurred-container
+      %div.img-src
