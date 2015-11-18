@@ -3,11 +3,7 @@ class MoviesController < ApplicationController
 	#add_breadcrumb "Home", :root_path
 
 	def index
-		@movies = Movie.all
-		# @movies.sort!{|a, b|
-		# 	a[:title][:release_date] <=> b[:title][:release_date]
-		# }
-		@movies.sort_by!{|movie| [movie.title, movie.release_date]}
+		@movies = Movie.order("title", "release_date")
 		#add_breadcrumb "All Movies", :movies_path
 	end
 
