@@ -3,8 +3,21 @@ class MoviesController < ApplicationController
 	#add_breadcrumb "Home", :root_path
 
 	def index
-		@movies = Movie.order("title", "release_date")
 		#add_breadcrumb "All Movies", :movies_path
+		if params[:args].nil?
+			@movies = Movie.all
+		else
+			args = params[:args]
+			if args == 'title'
+				@movies = Movie.order("title")
+			elsif args == 'rating'
+				@movies = Movie.order("rating")
+			elsif args == 'release_date'
+				@movies = Movie.order("release_date")
+			else
+				@movies = Movie.all
+			end
+		end
 	end
 
 	def show

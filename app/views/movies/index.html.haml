@@ -12,9 +12,15 @@
     %thead
       %tr
         %th No.
-        %th Movie Title
-        %th Rating
-        %th Release Date
+        %th
+          %a{href: sort_path('title')}
+            Movie Title
+        %th
+          %a{href: sort_path('rating')}
+            Rating
+        %th
+          %a{href: sort_path('release_date')}
+            Release Date
         %th More Info
     %tbody
       = render :partial => 'movie', :collection => @movies

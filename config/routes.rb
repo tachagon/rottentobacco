@@ -2,6 +2,7 @@ Rottentobacco::Application.routes.draw do
   resources :movies
   root :to => redirect('/movies')
 
+  get 'movies/sort/:args'         => 'movies#index', constraints: { args: /\w+/}, :as => 'sort'
   get 'auth/twitter', :as         => 'login_twitter'
   get 'auth/facebook', :as        => 'login_facebook'
   get 'login'                     => 'sessions#login', :as => 'login'
