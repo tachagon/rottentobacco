@@ -6,8 +6,3 @@
 = form_tag movie_path(@movie), :method => :put, class: 'form-horizontal' do
   
   = render :partial => 'movie_form'
-
-  %div.form-group
-    %div.col-sm-3
-    %div.col-sm-9
-      = submit_tag 'Update Movie Info', class: 'btn btn-success btn-sm'

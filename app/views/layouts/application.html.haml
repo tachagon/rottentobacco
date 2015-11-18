@@ -3,7 +3,7 @@
   %head
     %title RottenTobacco!
     = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
+    
 
     = csrf_meta_tags
 
@@ -14,10 +14,6 @@
     %div.container-fluid.main
       %div.row
         %div.col-md-2
-
-          %div.panel.panel-default
-            %div.panel-body
-              Left - side
 
         %div.col-md-7
           - if flash[:notice]
@@ -32,10 +28,8 @@
                 %span{"aria-hidden" => "true"}
                   &times;
               #warning.message= flash[:warning]
-          = render :partial => 'sessions/login'
-          %br
+          
           = yield
         %div.col-md-3
-          %div.panel.panel-default
-            %div.panel-body
-              Right - side
+
+    = javascript_include_tag 'application'

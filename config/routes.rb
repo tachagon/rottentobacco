@@ -4,6 +4,7 @@ Rottentobacco::Application.routes.draw do
 
   get 'auth/twitter', :as         => 'login_twitter'
   get 'auth/facebook', :as        => 'login_facebook'
+  get 'login'                     => 'sessions#login', :as => 'login'
   match 'auth/:provider/callback' => 'sessions#create'
   match 'logout'                  => 'sessions#destroy'
   match 'auth/failure'            => 'sessions#failure'

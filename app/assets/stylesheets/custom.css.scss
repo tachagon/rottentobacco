@@ -5,8 +5,8 @@
 @import "compass";
 @import "mixins";
 
-.main{
-	padding-top: 50px;
+.main {
+	padding-top: 150px;
 	background-color: white;
 }
 
@@ -40,4 +40,39 @@
 
 .img-src {
 	background-image: url(image_path('bg.jpg'));
+}
+
+$facebook: #3b5998;
+// $twitter: #00aced;
+$twitter: #55acee;
+
+.btn-facebook {
+	// @include button-variant(white, $facebook, orange);
+	border: none;
+	@include background-image(linear-gradient(lighten($facebook, 10%), $facebook, darken($facebook, 10%)));
+	
+	&:hover{
+		border: none;
+		@include background-image(linear-gradient(lighten($facebook, 30%), lighten($facebook, 20%), lighten($facebook, 10%)));
+	}
+}
+
+.btn-twitter {
+	border: none;
+	@include background-image(linear-gradient(lighten($twitter, 10%), $twitter, darken($twitter, 10%)));
+
+	&:hover{
+		border: none;
+		@include background-image(linear-gradient(lighten($twitter, 20%), lighten($twitter, 10%), lighten($twitter, 0%)));
+	}
+}
+
+.navbar {
+	@include box-shadow(#696969 2px 1px 10px);
+}
+
+#movies {
+	tr:hover{
+		background-color: yellow;
+	}
 }

@@ -4,12 +4,22 @@ class MoviesController < ApplicationController
 
 	def index
 		@movies = Movie.all
+		# @movies.sort!{|a, b|
+		# 	a[:title][:release_date] <=> b[:title][:release_date]
+		# }
+		@movies.sort_by!{|movie| [movie.title, movie.release_date]}
 		#add_breadcrumb "All Movies", :movies_path
 	end
 
 	def show
 		@movie = Movie.find_by_id(params[:id]) # what if this movie not in DB?
 		# BUG: we should check @movie for validity here!
+		
+		if @movie.nil?
+			flash[:warning] = "Movie id not found."
+			redirect_to movies_path and return
+		end
+
 		#add_breadcrumb "#{@movie.title}", :movie_path
 	end
 
@@ -23,7 +33,9 @@ class MoviesController < ApplicationController
 		@movie = Movie.new(params[:movie])
 		if @movie.save
 			flash[:notice] = "#{@movie.title} was successfully create."
-			redirect_to movies_path
+			# redirect_to movies_path
+			# for Project 4.3
+			redirect_to movie_path(@movie)
 		else
 			render 'new' # note, 'new' template can access @movie's field values!
 		end

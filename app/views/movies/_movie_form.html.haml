@@ -23,8 +23,23 @@
   = label :movie, :rating, 'Rating', class: 'col-sm-3 control-label'
   %div.col-sm-9
     = select :movie, :rating, ['G', 'PG', 'PG-13', 'R', 'NC-17'], {}, {class: 'form-control'}
+
+%div.form-group
+  = label :movie, :description, 'Description', class: 'col-sm-3 control-label'
+  %div.col-sm-9
+    = text_area :movie, :description, rows:2, class: 'form-control'
     
 %div.form-group
   = label :movie, :release_date, 'Release On', class: 'col-sm-3 control-label'
   %div.col-sm-9
-    = date_select :movie, :release_date
+    = date_select :movie, :release_date, {start_year: 1930}
+
+%div.form-group
+  %div.col-sm-3
+  %div.col-sm-9
+    - if @movie.new_record?
+      = submit_tag 'Save Changes', class: 'btn btn-success btn-sm'
+      %a.btn.btn-default.btn-sm{href: movies_path}= 'Cancel'
+    - else
+      = submit_tag 'Update Movie Info', class: 'btn btn-success btn-sm'
+      %a.btn.btn-default.btn-sm{href: movie_path(@movie)}= 'Cancel'
